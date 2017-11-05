@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        {% if is_post %}
+            <title>{{ title }}</title>
+        {% else %}
+            <title>Antimony - a pure rust stream processing / distributed computation platform</title>
+        {% endif %}
+        <meta name="description" content="">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/assets/css/style.min.css">
+        <link rel="stylesheet" href="/assets/css/custom.css">
+        <link rel="icon" type="image/x-icon" href="/assets/img/antimony.ico">
+        <script src="/assets/js/modernizr.js"></script>
+    </head>
+    <body>
+        <div class="page js-page">
+            <div class="header header-over large">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 col-xs-5">
+                            <a href="https://antimony.rs" class="logo-image logo-animated">
+                                <img src="/assets/img/antimony.png" alt="logo">
+                            </a>
+                            <a href="https://antimony.rs"><h2 class="logo-title">antimony.rs</h2></a>
+                        </div>
+                        <div class="col-md-9 col-sm-6 col-xs-7">
+                            <nav class="right helper">
+                                <ul class="menu sf-menu js-menu">
+                                    <li>
+                                        <a href="https://antimony.rs">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://docs.antimony.rs">Docs</a>
+                                    </li>
+                                    <li>
+                                        <a target="_blank" href="https://github.com/antimonyproject/antimony">GitHub</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="content">
+                <div class="container">
+                    <div class="row">
+                        {% if home_page %}
+                            <div class="col-md-1"></div>
+                            <div class="col-md-10">
+                                {% include '_layouts/home.liquid' %}
+                            </div>
+                        {% elsif is_post %}
+                            <div class="col-md-12">
+                                {% include '_layouts/post.liquid' %}
+                            </div>
+                        {% else %}
+                            <div class="col-md-12">
+                                {% include '_layouts/page.liquid' %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <footer class="js-footer-is-fixed">
+                <div class="footer-extended">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="footer-extended-container">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="footer-extended-menu">
+                                                <h5 class="footer-extended-menu-title">About</h5>
+                                                <ul class="footer-extended-menu-list">
+                                                    <li>
+                                                        <a href="/roadmap/">Vision & Roadmap</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/blog/">Blog</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="footer-extended-menu">
+                                                <h5 class="footer-extended-menu-title">Get in touch</h5>
+                                                <ul class="footer-extended-menu-list">
+                                                    <li>
+                                                        <a href="https://twitter.com/@msmakhlouf" target="_blank">@msmakhlouf</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://twitter.com/@_msamir_" target="_blank">@_msamir_</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="footer-extended-menu">
+                                                <h5 class="footer-extended-menu-title">Docs</h5>
+                                                <ul class="footer-extended-menu-list">
+                                                    <li>
+                                                        <a href="https://docs.antimony.rs">Docs</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="https://github.com/antimonyproject/website">Website</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix visible-xs-block"></div>
+                                        <div class="col-md-3">
+                                            <div class="footer-extended-menu">
+                                                <h5 class="footer-extended-menu-title">Community</h5>
+                                                <ul class="footer-extended-menu-list">
+                                                    <li>
+                                                        <a href="https://github.com/antimonyproject/">GitHub</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="/contribute/">Contribute</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-3 col-xs-12">
+                                <div class="footer-logo-wrapper">
+                                    <a href="https://antimony.rs" class="logo-image">
+                                        <img src="/assets/img/antimony.png" alt="logo">
+                                    </a>
+                                    <a href="https://antimony.rs"><h2 class="logo-title">antimony.rs</h2></a>
+                                </div>
+                            </div>
+                            <div class="col-md-9 col-sm-9 col-xs-12">
+                                <div class="footer-wrapper">
+                                    <p class="copyright helper right">
+                                        <br/>
+                                        Built with
+                                        <a class="link-footer" target="_blank" href="https://github.com/cobalt-org/cobalt.rs">cobalt.rs</a>, Hosted by 
+                                        <a class="link-footer" target="_blank" href="https://pages.github.com/">GitHub Pages</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="/assets/js/all.js"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109153921-1"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109153921-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-109153921-1');
+        </script>
+
+    </body>
+</html>

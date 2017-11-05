@@ -1,0 +1,7 @@
+name: antimony.rs
+source: "."
+dest: "build"
+posts: "blog"
+ignore:
+  - .git/*
+  - build/*
