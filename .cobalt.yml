@@ -5,3 +5,5 @@ posts: "blog"
 ignore:
   - .git/*
   - build/*
+syntax_highlight: 
+  theme: base16-ocean.light
