@@ -16,38 +16,6 @@ antimony = "0.0.1"
 
 ## Example Topology
 
-Define your topology as a JSON file representing the DAG (Directed Acyclic Graph) in a topology.json file
-
-```json
-{
-    "name": "exclamation_topology",
-    "sm_count": 3,
-    "instances_per_sm": 5,
-    "topology": [
-        {
-            "item_type": "Spout",
-            "name": "words_spout",
-            "module": "spouts::words::start_spout",
-            "instance_count": 10
-        },
-        {
-            "item_type": "Bolt",
-            "name": "exclaim1",
-            "module": "bolts::exclaim::exclaim1",
-            "instance_count": 3,
-            "input_stream": "word"
-        },
-        {
-            "item_type": "Bolt",
-            "name": "exclaim2",
-            "module": "bolts::exclaim::exclaim2",
-            "instance_count": 2,
-            "input_stream": "word2"
-        }
-    ]
-}
-```
-
 Create a new lib with cargo and place topology.json as follows
 
 <div class="file-tree">
@@ -83,7 +51,47 @@ Create a new lib with cargo and place topology.json as follows
     </ul>
 </div>
 
-Implement a spout
+<div class="tabs js-tabs code-highlight-tabs">
+
+<h4 class="tab-title"> topology.json </h4>
+<div class="tab-content">
+
+Define your topology as a JSON file representing the DAG (Directed Acyclic Graph) in a topology.json file
+
+```json
+{
+    "name": "exclamation_topology",
+    "sm_count": 3,
+    "instances_per_sm": 5,
+    "topology": [
+        {
+            "item_type": "Spout",
+            "name": "words_spout",
+            "module": "spouts::words::start_spout",
+            "instance_count": 10
+        },
+        {
+            "item_type": "Bolt",
+            "name": "exclaim1",
+            "module": "bolts::exclaim::exclaim1",
+            "instance_count": 3,
+            "input_stream": "word"
+        },
+        {
+            "item_type": "Bolt",
+            "name": "exclaim2",
+            "module": "bolts::exclaim::exclaim2",
+            "instance_count": 2,
+            "input_stream": "word2"
+        }
+    ]
+}
+```
+</div>
+
+
+<h4 class="tab-title"> words.rs (spout) </h4>
+<div class="tab-content">
 
 ```rust
 use antimony::components::spout::{Spout, BaseSpout};
@@ -110,7 +118,11 @@ pub fn start(args: ComponentConfig) {
 }
 ```
 
-Implement a bolt
+</div>
+
+<h4 class="tab-title"> exclaim.rs (bolts) </h4>
+<div class="tab-content">
+
 
 ```rust
 use antimony::components::bolt::{Bolt, BaseBolt};
@@ -156,4 +168,8 @@ pub fn exclaim2(args: ComponentConfig){
 	Bolt::start(&mut e, g, args);
 }
 ```
+</div>
+</div>
+
+
 
