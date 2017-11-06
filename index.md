@@ -50,20 +50,38 @@ Define your topology as a JSON file representing the DAG (Directed Acyclic Graph
 
 Create a new lib with cargo and place topology.json as follows
 
-```
-.
-├── Cargo.lock
-├── Cargo.toml
-├── src
-│   ├── bolts
-│   │   ├── mod.rs
-│   │   └── exclaim.rs
-│   ├── lib.rs
-│   └── spouts
-│       ├── mod.rs
-│       └── words.rs
-└── topology.json
-```
+<div class="file-tree">
+    <div class="file-tree-title"> Topology directory structure
+        <ul class="file-tree-buttons">
+            <li class="js-expand">
+                <i class="fa fa-plus"></i> Expand all</li>
+            <li class="js-collapse">
+                <i class="fa fa-minus"></i> Collapse all</li>
+        </ul>
+    </div>
+    <ul class="file-tree-list js-file-tree" data-expanded="true">
+        <li class="is-folder">src
+            <ul>
+                <li class="is-folder">bolts
+                    <ul>
+                        <li class="is-file">mod.rs</li>
+                        <li class="is-file">exclaim.rs</li>
+                    </ul>
+                </li>
+                <li class="is-folder">spouts
+                    <ul>
+                        <li class="is-file">mod.rs</li>
+                        <li class="is-file">words.rs</li>
+                    </ul>
+                </li>
+                <li class="is-file">lib.rs</li>
+            </ul>
+        </li>
+        <li class="is-file">Cargo.lock</li>
+        <li class="is-file">Cargo.toml</li>
+        <li class="is-file">topology.json</li>
+    </ul>
+</div>
 
 Implement a spout
 
